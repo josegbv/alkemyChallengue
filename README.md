@@ -1,3 +1,6 @@
+Por politicas de CORS deñ servidor https://superheroapi.com/ , se necesita instalar y habilitar en el navegador la extension Moesif Origin & CORS Changer
+Ofrecido por: https://www.moesif.com -- para poder hacer uso de esta app
+
 # Alkemy
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
