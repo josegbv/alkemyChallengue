@@ -1,1 +1,31 @@
-<p>heroe-details works!</p>
+<div class="imagenFondo">
+
+
+<h3 style="color:white" class="text-center p-3">Detalles del Heroe</h3>
+<!--detalle del heroe-->
+
+
+  <div class="container" >
+  <div class="m-0 row justify-content-center">
+   <div id="caja3" class="card mb-3" style="max-width: 800px;">
+    <div  class="row g-0 imagen">
+      <div class="col-md-4">
+        <img *ngIf="DetalleHeroe.image.url" [src]='DetalleHeroe.image.url' class="img-fluid rounded-start" alt="DetalleHeroe.name">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{DetalleHeroe.name}}</h5>
+          <p class="card-text">Genero: {{DetalleHeroe.appearance.gender}}</p>
+          <p class="card-text">Peso: {{DetalleHeroe.appearance.weight[1]}}</p>
+          <p class="card-text">Altura: {{DetalleHeroe.appearance.height[1]}}</p>
+          <p class="card-text">Altura: {{DetalleHeroe.appearance.height[1]}}</p>
+          <p class="card-text">Casa: {{DetalleHeroe.biography.publisher}}</p>
+          <p class="card-text">Ocupacion: {{DetalleHeroe.work.occupation}}</p>
+          <a class="btn btn-success text-center" (click)="volver()">Volver al Team</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>

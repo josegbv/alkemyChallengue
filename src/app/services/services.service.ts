@@ -17,6 +17,7 @@ export class ServicesService  implements OnInit{
 
   arregloTeam:any= [];
   detalle:any = [];
+  ingresa:any = false;
 
 
   acumulador =   {
@@ -36,7 +37,7 @@ export class ServicesService  implements OnInit{
  
 
     buscar = async (nombre:string)=>{
-      this.busquedaGeneral = await axios.get(`https://superheroapi.com/api/10226541118335562/search/${nombre}`)
+      this.busquedaGeneral = await axios.get(`/api/10226541118335562/search/${nombre}`)
       this.busquedaFiltrada = await this.busquedaGeneral.data.results
 
       //console.log(this.busquedaFiltrada)
@@ -44,7 +45,7 @@ export class ServicesService  implements OnInit{
     }
 
    eliminarPowerstats(id:any){
-    axios.get(`https://superheroapi.com/api/10226541118335562/${id}`).then(
+    axios.get(`/api/10226541118335562/${id}`).then(
       resp => {
 
         if(resp.data.biography.alignment ==='good'){
@@ -102,7 +103,7 @@ export class ServicesService  implements OnInit{
     )}
 
    equipo = async (id:any)=>{
-    axios.get(`https://superheroapi.com/api/10226541118335562/${id}`).then(
+    axios.get(`/api/10226541118335562/${id}`).then(
       resp => {
         if(this.arregloTeam.length>5){
           return console.log("No se puede añadir otro personaje")
@@ -169,7 +170,7 @@ export class ServicesService  implements OnInit{
    }
 
   async verDetallesHeroe(id:any){
-     const respuesta = await axios.get(`https://superheroapi.com/api/10226541118335562/${id}`);
+     const respuesta = await axios.get(`/api/10226541118335562/${id}`);
      return  this.detalle = await respuesta.data;
     
    }

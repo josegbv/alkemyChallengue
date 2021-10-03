@@ -1,1 +1,43 @@
-<p>home works!</p>
+
+    
+<button (click)="add(1)">añade</button>
+<div class="imagenFondo">
+<!-- componente para buscar al heroe para añadirlo -->
+ 
+<div class="container p-3">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+      <h3 style="color:white" class="text-center">Busca un Heroe y añadelo al team</h3>
+      <div class="input-group mb-3 ">
+        <input  #texto type="text" class="form-control " placeholder="Nombre del heroe" aria-label="nombre del heroe" aria-describedby="basic-addon2">
+        <button type="button" class="btn btn-primary" (click)="buscar(texto.value)">Buscar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- card para mostrar las busqueda de los heroes -->
+
+<div class="container">
+  <div class="m-0 row justify-content-center">
+    <div class="mb-5 text-center col-xs-6 col-md-6 col-lg-4" *ngFor="let heroe of busqueda">
+      <div id="caja3" class="card" style="width: 18rem;" >
+        <img *ngIf="heroe.image.url"  [src]='heroe.image.url' class="card-img-top" alt="heroe.name">
+        <div class="card-body imagen">
+          <h5 class="card-title">{{heroe.name}}</h5>
+          <h4 class="card-title">Inclinacion: {{heroe.biography.alignment}}</h4>
+          <a (click)="add(heroe.id)" class="btn btn-primary">Añadir al Team</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+  
+
+
+
+

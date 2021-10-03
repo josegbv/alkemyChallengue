@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-heroe-details',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heroe-details.component.css']
 })
 export class HeroeDetailsComponent implements OnInit {
+  DetalleHeroe:any = [];
 
-  constructor() { }
+  constructor(private activateRoute:ActivatedRoute, private service:ServicesService, private route:Router) { }
 
-  ngOnInit(): void {
-  }
+ async  ngOnInit() {
+    let id:any = this.activateRoute.snapshot.paramMap.get('id');
 
+
+    this.DetalleHeroe =  await this.service.verDetallesHeroe(id)
+    }
+
+    volver(){
+      this.route.navigate(['/equipo'])
+    }
 }

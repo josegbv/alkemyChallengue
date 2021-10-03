@@ -1,102 +1,28 @@
 
 <!-- nav -->
-<nav class="navbar-light bg-light">
-  <ul class="nav justify-content-center">
-    <h1>SUPER HERO TEAM</h1>
+<nav class="navbar-light bg-dark">
+  <ul class="nav justify-content-center pt-3">
+    <h1 style="color:white">SUPER HERO TEAM</h1>
   </ul>
+
+  <div class="container text-center">
+    <div class="row">
+      
+        <div class="col">
+          <div class="m-1">
+            <button routerLink="/equipo" class="btn btn-primary m-1">Ver al Team</button>
+          <button routerLink="/home" class="btn btn-primary">Añadir Integrante</button>
+          </div>
+        </div>
+      
+     
+    </div>
+  </div>
 </nav>
 
 
- <!-- componente para buscar al heroe para añadirlo -->
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h3 class="text-center">Busca un Heroe y añadelo al team</h3>
-        <div class="input-group mb-3">
-          <input #texto type="text" class="form-control" placeholder="Nombre del heroe" aria-label="nombre del heroe" aria-describedby="basic-addon2">
-          <button type="button" class="btn btn-primary" (click)="buscar(texto.value)">Buscar</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
-  <!-- card para mostrar las busqueda de los heroes -->
-<div class="container">
-  <div class="m-0 row justify-content-center">
-    <div class="col-auto text-center col-xs-6 col-md-6 col-lg-4" *ngFor="let heroe of busqueda">
-      <div class="card" style="width: 18rem;" >
-        <img [src]='heroe.image.url' class="card-img-top" alt="heroe.name">
-        <div class="card-body">
-          <h5 class="card-title">{{heroe.name}}</h5>
-          <h4 class="card-title">Inclinacion: {{heroe.biography.alignment}}</h4>
-          <a (click)="add(heroe.id)" class="btn btn-primary">Añadir al Team</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<router-outlet ></router-outlet>
 
-
-
-  <!-- las estadisticas del team -->
-  <div class="container">
-    <div class="row">
-      <h3>Estadisticas del Team</h3>
-        <p>Inteligencia:{{estadisticas.intelligence}}</p>
-        <p>Fuerza:{{estadisticas.strength}}</p>
-        <p>Rapidez:{{estadisticas.speed}}</p>
-        <p>Durabilidad:{{estadisticas.durability}}</p>
-        <p>Poder:{{estadisticas.power}}</p>
-        <p>Combate:{{estadisticas.combat}}</p>
-    </div>
-  </div>
-
-
-
-  <!--team-->
-  <div class="container" *ngIf="team">
-    <div class="m-0 row justify-content-center">
-      <div class="col-auto text-center col-xs-6 col-md-6 col-lg-4" *ngFor="let heroe of team">
-        <div class="card" style="width: 18rem;" >
-          <img [src]='heroe.image.url' class="card-img-top" alt="heroe.name">
-          <div class="card-body">
-            <h5 class="card-title">Nombre: {{heroe.name}} 
-            <img *ngIf="heroe.biography.alignment==='bad'" src="../assets/bad.png" width="30px" alt=""> 
-            <img *ngIf="heroe.biography.alignment==='good'" src="../assets/good.png" width="20px" alt=""></h5>
-            <a (click)="eliminarHeroe(heroe.id)" class="btn btn-danger">Eliminar</a>
-            <a (click)="verMas(heroe.id)" class="btn btn-success">Ver mas</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!--detalle del heroe-->
-  <div class="container" *ngIf="detalle===true">
-    <div class="m-0 row justify-content-center">
-      <div class="col-auto text-center col-xs-6 col-md-6 col-lg-4" >
-        <div class="card" style="width: 18rem;" >
-          <img [src]='DetalleHeroe.image.url' class="card-img-top" alt="DetalleHeroe.name">
-          <div class="card-body">
-            <h5 class="card-title">{{DetalleHeroe.name}}</h5>
-            <p class="card-text">Peso: {{DetalleHeroe.appearance.weight[1]}}</p>
-            <p class="card-text">Altura: {{DetalleHeroe.appearance.height[1]}}</p>
-            <p class="card-text">Ocupacion: {{DetalleHeroe.work.occupation}}</p>
-            <a class="btn btn-success">Volver</a>
-          </div>
-        </div>  
-      </div>
-    </div>
-  </div>
-
-
-
-
-<h1> <button (click)="add(9)">AGREGA</button></h1>
-<h1> <button (click)="add(11)">AGREGA</button></h1>
-<h1> <button (click)="add(12)">AGREGA</button></h1>
-<h1> <button (click)="add(13)">AGREGA</button></h1>
-<h1> <button (click)="add(14)">AGREGA</button></h1>
-<h1> <button (click)="add(15)">AGREGA</button></h1>
+ 

@@ -1,1 +1,77 @@
-<p>equipo works!</p>
+<div class="imagenFondo">  
+  
+
+  <!-- mensaje de alerta si sobrepasan los 6 integrantes -->
+  <div *ngIf="team.length>5"  class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+    Nota: No se pueden Añadir mas de 6 integrantes
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>
+
+ 
+  <!-- las estadisticas del team -->
+
+   <div class="container ">
+     <div class="row justify-content-center">
+      <div  class="col-6 mt-4">  
+        <div id="caja1" class="text-center p-3 imagen">
+          <h3 >Estadisticas del Team</h3>
+          <p>Inteligencia:{{estadisticas.intelligence}}</p>
+          <p>Fuerza:{{estadisticas.strength}}</p>
+          <p>Rapidez:{{estadisticas.speed}}</p>
+          <p>Durabilidad:{{estadisticas.durability}}</p>
+          <p>Poder:{{estadisticas.power}}</p>
+          <p>Combate:{{estadisticas.combat}}</p>
+        </div>
+       </div>
+     </div>
+   </div>
+
+
+  
+            
+    <!--team-->
+    
+      <div class="container mt-5" *ngIf="team">
+        <div class="m-0 row ">
+                   
+
+            <div class="col-auto text-center col-xs-6 col-md-6 col-lg-4" *ngFor="let heroe of team">
+              <div id="caja3" class="card mb-2" style="width: 18rem;" >
+                <img [src]='heroe.image.url' class="card-img-top" alt="heroe.name">
+                <div class="card-body imagen">
+                  <h5 class="card-title">Nombre: {{heroe.name}} 
+                  <img *ngIf="heroe.biography.alignment==='bad'" src="../assets/bad.png" width="30px" alt=""> 
+                  <img *ngIf="heroe.biography.alignment==='good'" src="../assets/good.png" width="20px" alt=""></h5>
+                  <a (click)="eliminarHeroe(heroe.id)" class="btn btn-danger m-1">Eliminar</a>
+                  <a (click)="verMas(heroe.id)" class="btn btn-success">Ver mas</a>
+                </div>
+              </div>
+            </div>
+             
+      
+
+    </div>
+  </div>
+
+
+  
+
+
+
+        
+      
+      
+   
+    
+    
+
+    
+  
+
+     
+
+
+
+
+
+</div>
