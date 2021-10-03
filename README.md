@@ -1,4 +1,4 @@
-Por politicas de CORS deñ servidor https://superheroapi.com/ , se necesita instalar y habilitar en el navegador la extension Moesif Origin & CORS Changer
+Por politicas de CORS del servidor https://superheroapi.com/ , se necesita instalar y habilitar en el navegador la extension Moesif Origin & CORS Changer
 Ofrecido por: https://www.moesif.com -- para poder hacer uso de esta app
 
 # Alkemy
