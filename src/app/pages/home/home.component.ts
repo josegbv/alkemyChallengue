@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServicesService } from 'src/app/services/services.service';
@@ -31,8 +32,6 @@ export class HomeComponent implements OnInit {
 
   //añade un heroe al equipo
   add = async(id:any)=>{
-
-   
 
     this.service.equipo(id);
     this.estadisticas = this.service.acumulador.powerstats;

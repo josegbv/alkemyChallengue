@@ -158,7 +158,7 @@ export class ServicesService  implements OnInit{
             this.acumulador.powerstats.combat += Number(resp.data.powerstats.combat);
            }
           
-          console.log(resp, 'este es el json')
+          console.log(resp, 'este es el jsone')
        
 
           this.arregloTeam.push(resp.data) ;
