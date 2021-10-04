@@ -10,6 +10,7 @@ const routes: Routes = [
 {path: 'equipo', component:EquipoComponent, canActivate: [ProtegidaGuard]},
 {path: 'home', component:HomeComponent, canActivate: [ProtegidaGuard]},
 {path: 'heroe-details/:id', component:HeroeDetailsComponent,  canActivate: [ProtegidaGuard]},
+{path:'404', component: LoginComponent},
 {path:'', component: LoginComponent},
 { path: '**',   redirectTo: '', pathMatch: 'full' }
 ];
