@@ -7,6 +7,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Login credentials: user = "challenge@alkemy.org"
        password = "angular";
+Note: 
+you must enable a cors extension in your browser
 
 ## Development server
 
