@@ -5,7 +5,7 @@ Ofrecido por: https://www.moesif.com -- para poder hacer uso de esta app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
-Login credentials: user = "challenge@alkemy.org";
+Login credentials: user = "challenge@alkemy.org"
        password = "angular";
 
 ## Development server
